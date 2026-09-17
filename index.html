@@ -1,0 +1,3498 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Soto Bu Utik</title>
+
+<meta name="description"
+content="Soto Bu Utik - Soto lezat dengan cita rasa khas.">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #fffaf0;
+
+    color: #29251f;
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   VARIABLE
+===================================================== */
+
+:root {
+
+    --orange: #d97706;
+
+    --orange-dark: #a84e00;
+
+    --yellow: #f59e0b;
+
+    --cream: #fff5dc;
+
+    --dark: #29251f;
+
+    --gray: #70695f;
+
+    --white: #ffffff;
+
+    --green: #607d3b;
+
+    --shadow:
+        0 15px 45px
+        rgba(0,0,0,.10);
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999;
+
+    padding: 20px 6%;
+
+    transition: .4s;
+}
+
+.navbar.scrolled {
+
+    background:
+        rgba(255,255,255,.95);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 5px 25px
+        rgba(0,0,0,.08);
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.nav-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: var(--orange);
+}
+
+.logo span {
+
+    color: var(--dark);
+}
+
+.nav-menu {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 28px;
+}
+
+.nav-menu a {
+
+    color: var(--dark);
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+
+    color: var(--orange);
+}
+
+.nav-order {
+
+    background:
+        var(--orange);
+
+    color:
+        white !important;
+
+    padding:
+        12px 20px;
+
+    border-radius:
+        30px;
+}
+
+.menu-toggle {
+
+    display: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding:
+        130px 6% 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 15%,
+            #ffe2a2,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 5% 90%,
+            #ffecc9,
+            transparent 30%
+        ),
+
+        var(--cream);
+}
+
+.hero-container {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-text {
+
+    animation:
+        masukKiri 1s ease;
+}
+
+@keyframes masukKiri {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-60px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+.badge {
+
+    display: inline-block;
+
+    background:
+        white;
+
+    color:
+        var(--orange);
+
+    padding:
+        9px 17px;
+
+    border-radius:
+        30px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        20px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.06);
+}
+
+.hero h1 {
+
+    font-size:
+        clamp(45px,6vw,75px);
+
+    line-height:
+        1.05;
+
+    margin-bottom:
+        25px;
+}
+
+.hero h1 span {
+
+    color:
+        var(--orange);
+}
+
+.hero p {
+
+    color:
+        var(--gray);
+
+    font-size:
+        17px;
+
+    line-height:
+        1.8;
+
+    max-width:
+        570px;
+
+    margin-bottom:
+        30px;
+}
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    gap:
+        15px;
+
+    flex-wrap:
+        wrap;
+}
+
+.btn {
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    padding:
+        15px 25px;
+
+    border-radius:
+        40px;
+
+    font-weight:
+        800;
+
+    transition:
+        .3s;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+.btn-primary {
+
+    background:
+        var(--orange);
+
+    color:
+        white;
+
+    box-shadow:
+        0 10px 25px
+        rgba(217,119,6,.25);
+}
+
+.btn-primary:hover {
+
+    background:
+        var(--orange-dark);
+
+    transform:
+        translateY(-4px);
+}
+
+.btn-outline {
+
+    border:
+        2px solid
+        var(--orange);
+
+    color:
+        var(--orange);
+
+    background:
+        transparent;
+}
+
+.btn-outline:hover {
+
+    background:
+        var(--orange);
+
+    color:
+        white;
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =====================================================
+   HERO FOTO
+===================================================== */
+
+.hero-image {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    position:
+        relative;
+
+    animation:
+        masukKanan 1.2s ease;
+}
+
+@keyframes masukKanan {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateX(60px)
+            scale(.9);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+.photo-frame {
+
+    width:
+        min(450px,90vw);
+
+    height:
+        500px;
+
+    padding:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            #ffd166
+        );
+
+    border-radius:
+        50% 50% 25% 25%;
+
+    box-shadow:
+        var(--shadow);
+
+    transform:
+        rotate(2deg);
+
+    transition:
+        .5s;
+}
+
+.photo-frame:hover {
+
+    transform:
+        rotate(0)
+        scale(1.03);
+}
+
+.photo-frame img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        45% 45% 20% 20%;
+}
+
+.floating-card {
+
+    position:
+        absolute;
+
+    bottom:
+        25px;
+
+    left:
+        0;
+
+    background:
+        white;
+
+    padding:
+        17px 20px;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        var(--shadow);
+
+    animation:
+        naikTurun 3s infinite;
+}
+
+@keyframes naikTurun {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+.floating-card strong {
+
+    display:
+        block;
+
+    color:
+        var(--orange);
+
+    font-size:
+        20px;
+}
+
+.floating-card small {
+
+    color:
+        var(--gray);
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section {
+
+    padding:
+        100px 6%;
+}
+
+.container {
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+}
+
+.section-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        55px;
+}
+
+.section-title span {
+
+    color:
+        var(--orange);
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    font-size:
+        13px;
+}
+
+.section-title h2 {
+
+    font-size:
+        clamp(32px,4vw,48px);
+
+    margin-top:
+        10px;
+}
+
+.section-title p {
+
+    color:
+        var(--gray);
+
+    line-height:
+        1.7;
+
+    max-width:
+        600px;
+
+    margin:
+        15px auto 0;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+
+    background:
+        white;
+}
+
+.about-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:
+        70px;
+
+    align-items:
+        center;
+}
+
+.about-photo .photo-frame {
+
+    width:
+        100%;
+
+    height:
+        430px;
+
+    border-radius:
+        25px;
+
+    transform:
+        rotate(-2deg);
+}
+
+.about-photo .photo-frame img {
+
+    border-radius:
+        18px;
+}
+
+.about-text h3 {
+
+    font-size:
+        35px;
+
+    margin:
+        15px 0;
+}
+
+.about-text p {
+
+    color:
+        var(--gray);
+
+    line-height:
+        1.9;
+
+    margin-bottom:
+        18px;
+}
+
+.features {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        15px;
+
+    margin-top:
+        25px;
+}
+
+.feature {
+
+    background:
+        var(--cream);
+
+    padding:
+        18px;
+
+    border-radius:
+        17px;
+
+    transition:
+        .3s;
+}
+
+.feature:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.08);
+}
+
+.feature strong {
+
+    display:
+        block;
+
+    color:
+        var(--orange);
+
+    margin-bottom:
+        6px;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu-section {
+
+    background:
+        var(--cream);
+}
+
+.menu-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        25px;
+}
+
+.menu-card {
+
+    background:
+        white;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.06);
+
+    transition:
+        .4s;
+}
+
+.menu-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.12);
+}
+
+.menu-image {
+
+    height:
+        210px;
+
+    overflow:
+        hidden;
+}
+
+.menu-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        .5s;
+}
+
+.menu-card:hover
+.menu-image img {
+
+    transform:
+        scale(1.08);
+}
+
+.menu-content {
+
+    padding:
+        22px;
+}
+
+.menu-content h3 {
+
+    margin-bottom:
+        8px;
+}
+
+.menu-content p {
+
+    color:
+        var(--gray);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.6;
+
+    min-height:
+        45px;
+}
+
+.menu-bottom {
+
+    margin-top:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+}
+
+.price {
+
+    color:
+        var(--orange);
+
+    font-size:
+        20px;
+
+    font-weight:
+        900;
+}
+
+.order-small {
+
+    border:
+        none;
+
+    background:
+        var(--orange);
+
+    color:
+        white;
+
+    padding:
+        10px 15px;
+
+    border-radius:
+        20px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .3s;
+}
+
+.order-small:hover {
+
+    background:
+        var(--orange-dark);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =====================================================
+   ORDER
+===================================================== */
+
+.order-section {
+
+    background:
+        white;
+}
+
+.form-box {
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+    background:
+        white;
+
+    padding:
+        40px;
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.09);
+
+    border:
+        1px solid #eee;
+}
+
+.form-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        20px;
+}
+
+.form-group {
+
+    margin-bottom:
+        20px;
+}
+
+.form-group.full {
+
+    grid-column:
+        1/-1;
+}
+
+.form-group label {
+
+    display:
+        block;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid #ddd;
+
+    background:
+        #fffdf9;
+
+    padding:
+        14px 16px;
+
+    border-radius:
+        14px;
+
+    outline:
+        none;
+
+    transition:
+        .3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color:
+        var(--orange);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(217,119,6,.1);
+}
+
+textarea {
+
+    min-height:
+        110px;
+
+    resize:
+        vertical;
+}
+
+.total-box {
+
+    background:
+        var(--cream);
+
+    border-radius:
+        18px;
+
+    padding:
+        20px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        25px;
+}
+
+.total-box strong {
+
+    color:
+        var(--orange);
+
+    font-size:
+        25px;
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0cf,
+            #fffdf8
+        );
+}
+
+.rating {
+
+    display:
+        flex;
+
+    flex-direction:
+        row-reverse;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        5px;
+}
+
+.rating input {
+
+    display:
+        none;
+}
+
+.rating label {
+
+    font-size:
+        35px;
+
+    color:
+        #ccc;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+
+    color:
+        #f59e0b;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        20px;
+}
+
+.contact-card {
+
+    background:
+        white;
+
+    text-align:
+        center;
+
+    padding:
+        30px;
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.06);
+
+    transition:
+        .3s;
+}
+
+.contact-card:hover {
+
+    transform:
+        translateY(-7px);
+}
+
+.contact-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--cream);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        23px;
+}
+
+.contact-card h3 {
+
+    margin-bottom:
+        8px;
+}
+
+.contact-card p {
+
+    color:
+        var(--gray);
+
+    line-height:
+        1.6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    padding:
+        60px 6% 25px;
+}
+
+.footer-container {
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    padding-bottom:
+        35px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+.footer-logo {
+
+    color:
+        var(--yellow);
+
+    font-size:
+        26px;
+
+    font-weight:
+        900;
+
+    margin-bottom:
+        10px;
+}
+
+.footer-container p {
+
+    color:
+        #bdb7ae;
+
+    line-height:
+        1.7;
+
+    max-width:
+        400px;
+}
+
+.footer-links {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+}
+
+.footer-links a {
+
+    color:
+        #ddd;
+}
+
+.copyright {
+
+    text-align:
+        center;
+
+    color:
+        #999;
+
+    padding-top:
+        25px;
+
+    font-size:
+        13px;
+}
+
+
+/* =====================================================
+   ANIMASI SCROLL
+===================================================== */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        .8s;
+}
+
+.reveal.active {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+
+    position:
+        fixed;
+
+    right:
+        25px;
+
+    bottom:
+        25px;
+
+    background:
+        #29251f;
+
+    color:
+        white;
+
+    padding:
+        16px 22px;
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        var(--shadow);
+
+    transform:
+        translateY(120px);
+
+    opacity:
+        0;
+
+    transition:
+        .4s;
+
+    z-index:
+        5000;
+
+    max-width:
+        350px;
+}
+
+.toast.show {
+
+    transform:
+        translateY(0);
+
+    opacity:
+        1;
+}
+
+
+/* =====================================================
+   HIDDEN IFRAME
+===================================================== */
+
+#googleFrame {
+
+    display:
+        none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px) {
+
+    .nav-menu {
+
+        position:
+            absolute;
+
+        top:
+            70px;
+
+        left:
+            5%;
+
+        right:
+            5%;
+
+        background:
+            white;
+
+        padding:
+            25px;
+
+        border-radius:
+            20px;
+
+        box-shadow:
+            var(--shadow);
+
+        flex-direction:
+            column;
+
+        display:
+            none;
+    }
+
+    .nav-menu.active {
+
+        display:
+            flex;
+    }
+
+    .menu-toggle {
+
+        display:
+            block;
+    }
+
+    .hero-container,
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero-text {
+
+        text-align:
+            center;
+    }
+
+    .hero-text p {
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+    }
+
+    .hero-buttons {
+
+        justify-content:
+            center;
+    }
+
+    .menu-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .footer-container {
+
+        flex-direction:
+            column;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    section {
+
+        padding:
+            75px 5%;
+    }
+
+    .photo-frame {
+
+        height:
+            400px;
+    }
+
+    .menu-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .form-group.full {
+
+        grid-column:
+            auto;
+    }
+
+    .form-box {
+
+        padding:
+            25px 18px;
+    }
+
+    .features {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .footer-links {
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+    }
+
+    .floating-card {
+
+        left:
+            5px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            Soto <span>Bu Utik</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+
+            <li>
+                <a href="#home">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="#tentang">
+                    Tentang
+                </a>
+            </li>
+
+            <li>
+                <a href="#menu">
+                    Menu
+                </a>
+            </li>
+
+            <li>
+                <a href="#pesan">
+                    Pesan
+                </a>
+            </li>
+
+            <li>
+                <a href="#masukan">
+                    Masukan
+                </a>
+            </li>
+
+        </ul>
+
+        <div
+            class="menu-toggle"
+            id="menuToggle">
+
+            ☰
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                🍲 Soto Rumahan Favorit
+            </span>
+
+            <h1>
+
+                Nikmatnya
+                <span>Soto</span>
+                Bu Utik
+
+            </h1>
+
+            <p>
+
+                Sajian soto hangat dengan kuah gurih,
+                bahan pilihan, dan cita rasa khas
+                yang cocok dinikmati kapan saja.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#pesan"
+                    class="btn btn-primary">
+
+                    Pesan Sekarang →
+
+                </a>
+
+                <a
+                    href="#menu"
+                    class="btn btn-outline">
+
+                    Lihat Menu
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <!--
+                GANTI FOTO UTAMA DI SINI
+
+                contoh:
+                src="foto-soto.jpg"
+            -->
+
+            <div class="photo-frame">
+
+                <img
+                    src="foto-soto.jpg"
+                    alt="Soto Bu Utik">
+
+            </div>
+
+
+            <div class="floating-card">
+
+                <strong>
+                    ⭐ Favorit
+                </strong>
+
+                <small>
+                    Soto Bu Utik
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TENTANG
+===================================================== -->
+
+<section
+    class="about"
+    id="tentang">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div
+                class="about-photo reveal">
+
+                <div class="photo-frame">
+
+                    <!-- GANTI FOTO -->
+
+                    <img
+                        src="foto-bu-utik.jpg"
+                        alt="Bu Utik">
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="about-text reveal">
+
+                <span
+                    style="
+                    color:var(--orange);
+                    font-weight:900;">
+
+                    TENTANG KAMI
+
+                </span>
+
+                <h3>
+
+                    Rasa Rumahan
+                    yang Bikin Kangen
+
+                </h3>
+
+                <p>
+
+                    Soto Bu Utik hadir dengan
+                    semangat menyajikan makanan
+                    yang sederhana namun memiliki
+                    rasa yang istimewa.
+
+                </p>
+
+                <p>
+
+                    Setiap mangkuk dibuat dengan
+                    bahan pilihan dan racikan bumbu
+                    yang menghasilkan kuah soto
+                    gurih dan nikmat.
+
+                </p>
+
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <strong>
+                            🥣 Kuah Gurih
+                        </strong>
+
+                        <span>
+                            Racikan bumbu khas
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <strong>
+                            🥩 Isian Melimpah
+                        </strong>
+
+                        <span>
+                            Porsi puas
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <strong>
+                            🌿 Bahan Segar
+                        </strong>
+
+                        <span>
+                            Dipilih setiap hari
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <strong>
+                            ❤️ Dibuat Hati-hati
+                        </strong>
+
+                        <span>
+                            Menjaga kualitas rasa
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<section
+    class="menu-section"
+    id="menu">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <span>
+                MENU KAMI
+            </span>
+
+            <h2>
+                Menu Favorit
+            </h2>
+
+            <p>
+                Pilih menu yang Anda inginkan
+                kemudian klik tombol pesan.
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <!-- MENU 1 -->
+
+            <div class="menu-card reveal">
+
+                <div class="menu-image">
+
+                    <img
+                        src="soto-ayam.jpg"
+                        alt="Soto Ayam">
+
+                </div>
+
+                <div class="menu-content">
+
+                    <h3>
+                        Soto Ayam
+                    </h3>
+
+                    <p>
+                        Soto ayam dengan kuah
+                        gurih dan isian nikmat.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">
+                            Rp 12.000
+                        </span>
+
+                        <button
+                            class="order-small"
+                            onclick="
+                            pilihMenu(
+                            'Soto Ayam'
+                            );
+                            ">
+
+                            Pesan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 2 -->
+
+            <div class="menu-card reveal">
+
+                <div class="menu-image">
+
+                    <img
+                        src="soto-daging.jpg"
+                        alt="Soto Daging">
+
+                </div>
+
+                <div class="menu-content">
+
+                    <h3>
+                        Soto Daging
+                    </h3>
+
+                    <p>
+                        Potongan daging dengan
+                        kuah soto kaya rasa.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">
+                            Rp 15.000
+                        </span>
+
+                        <button
+                            class="order-small"
+                            onclick="
+                            pilihMenu(
+                            'Soto Daging'
+                            );
+                            ">
+
+                            Pesan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 3 -->
+
+            <div class="menu-card reveal">
+
+                <div class="menu-image">
+
+                    <img
+                        src="soto-special.jpg"
+                        alt="Soto Special">
+
+                </div>
+
+                <div class="menu-content">
+
+                    <h3>
+                        Soto Special
+                    </h3>
+
+                    <p>
+                        Porsi spesial dengan
+                        isian lebih lengkap.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">
+                            Rp 18.000
+                        </span>
+
+                        <button
+                            class="order-small"
+                            onclick="
+                            pilihMenu(
+                            'Soto Special'
+                            );
+                            ">
+
+                            Pesan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 4 -->
+
+            <div class="menu-card reveal">
+
+                <div class="menu-image">
+
+                    <img
+                        src="nasi.jpg"
+                        alt="Nasi">
+
+                </div>
+
+                <div class="menu-content">
+
+                    <h3>
+                        Nasi
+                    </h3>
+
+                    <p>
+                        Tambahan nasi putih
+                        hangat.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">
+                            Rp 4.000
+                        </span>
+
+                        <button
+                            class="order-small"
+                            onclick="
+                            pilihMenu(
+                            'Nasi'
+                            );
+                            ">
+
+                            Pesan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 5 -->
+
+            <div class="menu-card reveal">
+
+                <div class="menu-image">
+
+                    <img
+                        src="es-teh.jpg"
+                        alt="Es Teh">
+
+                </div>
+
+                <div class="menu-content">
+
+                    <h3>
+                        Es Teh
+                    </h3>
+
+                    <p>
+                        Es teh manis
+                        yang menyegarkan.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">
+                            Rp 4.000
+                        </span>
+
+                        <button
+                            class="order-small"
+                            onclick="
+                            pilihMenu(
+                            'Es Teh'
+                            );
+                            ">
+
+                            Pesan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 6 -->
+
+            <div class="menu-card reveal">
+
+                <div class="menu-image">
+
+                    <img
+                        src="es-jeruk.jpg"
+                        alt="Es Jeruk">
+
+                </div>
+
+                <div class="menu-content">
+
+                    <h3>
+                        Es Jeruk
+                    </h3>
+
+                    <p>
+                        Minuman jeruk
+                        yang segar.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">
+                            Rp 5.000
+                        </span>
+
+                        <button
+                            class="order-small"
+                            onclick="
+                            pilihMenu(
+                            'Es Jeruk'
+                            );
+                            ">
+
+                            Pesan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FORM PESAN
+===================================================== -->
+
+<section
+    class="order-section"
+    id="pesan">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <span>
+                PESAN ONLINE
+            </span>
+
+            <h2>
+                Pesan Soto Sekarang
+            </h2>
+
+            <p>
+                Data pesanan akan langsung
+                dicatat ke Google Spreadsheet.
+            </p>
+
+        </div>
+
+
+        <div class="form-box reveal">
+
+            <form
+                id="orderForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Nama
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nama"
+                            placeholder="Nama Anda"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Nomor HP
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="hp"
+                            placeholder="08xxxxxxxxxx"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Pilih Menu
+                        </label>
+
+                        <select
+                            id="menuSelect"
+                            required>
+
+                            <option value="">
+                                Pilih Menu
+                            </option>
+
+                            <option
+                                value="Soto Ayam"
+                                data-price="12000">
+
+                                Soto Ayam -
+                                Rp 12.000
+
+                            </option>
+
+                            <option
+                                value="Soto Daging"
+                                data-price="15000">
+
+                                Soto Daging -
+                                Rp 15.000
+
+                            </option>
+
+                            <option
+                                value="Soto Special"
+                                data-price="18000">
+
+                                Soto Special -
+                                Rp 18.000
+
+                            </option>
+
+                            <option
+                                value="Nasi"
+                                data-price="4000">
+
+                                Nasi -
+                                Rp 4.000
+
+                            </option>
+
+                            <option
+                                value="Es Teh"
+                                data-price="4000">
+
+                                Es Teh -
+                                Rp 4.000
+
+                            </option>
+
+                            <option
+                                value="Es Jeruk"
+                                data-price="5000">
+
+                                Es Jeruk -
+                                Rp 5.000
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Jumlah
+                        </label>
+
+                        <input
+                            type="number"
+                            id="jumlah"
+                            value="1"
+                            min="1"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Catatan
+                        </label>
+
+                        <textarea
+                            id="catatan"
+                            placeholder="Contoh: Tidak pakai sambal..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="total-box">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="total">
+                        Rp 0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="width:100%;">
+
+                    🛒 Kirim Pesanan
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FORM MASUKAN
+===================================================== -->
+
+<section
+    class="feedback"
+    id="masukan">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <span>
+                MASUKAN
+            </span>
+
+            <h2>
+                Berikan Masukan
+            </h2>
+
+            <p>
+                Pendapat pelanggan sangat berarti
+                untuk Soto Bu Utik.
+            </p>
+
+        </div>
+
+
+        <div
+            class="form-box reveal">
+
+
+            <form
+                id="feedbackForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Nama
+                    </label>
+
+                    <input
+                        type="text"
+                        id="feedbackNama"
+                        placeholder="Nama Anda"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                        <small>
+                            (opsional)
+                        </small>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="feedbackEmail"
+                        placeholder="email@gmail.com">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Rating
+                    </label>
+
+                    <div class="rating">
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            id="star5"
+                            value="5"
+                            required>
+
+                        <label
+                            for="star5">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            id="star4"
+                            value="4">
+
+                        <label
+                            for="star4">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            id="star3"
+                            value="3">
+
+                        <label
+                            for="star3">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            id="star2"
+                            value="2">
+
+                        <label
+                            for="star2">
+                            ★
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            id="star1"
+                            value="1">
+
+                        <label
+                            for="star1">
+                            ★
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Masukan Anda
+                    </label>
+
+                    <textarea
+                        id="masukanText"
+                        placeholder="Tuliskan masukan Anda..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="width:100%;">
+
+                    💬 Kirim Masukan
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INFORMASI
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <span>
+                INFORMASI
+            </span>
+
+            <h2>
+                Soto Bu Utik
+            </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Alamat
+                </h3>
+
+                <p>
+                    Masukkan alamat Soto Bu Utik
+                    di sini.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <h3>
+                    Telepon
+                </h3>
+
+                <p>
+                    08xxxxxxxxxx
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="contact-icon">
+                    🕐
+                </div>
+
+                <h3>
+                    Jam Buka
+                </h3>
+
+                <p>
+                    Senin - Minggu<br>
+                    07.00 - 20.00
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <div class="footer-logo">
+                Soto Bu Utik
+            </div>
+
+            <p>
+                Soto hangat dengan rasa khas
+                yang dibuat dengan sepenuh hati.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Beranda
+            </a>
+
+            <a href="#menu">
+                Menu
+            </a>
+
+            <a href="#pesan">
+                Pesan
+            </a>
+
+            <a href="#masukan">
+                Masukan
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Soto Bu Utik.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     IFRAME GOOGLE
+===================================================== -->
+
+<iframe
+    name="googleFrame"
+    id="googleFrame">
+</iframe>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   1. MASUKKAN URL GOOGLE APPS SCRIPT DI SINI
+===================================================== */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbyV5X9lP0MssEmpGxY2BjSiXQak6K4IAmg4GpD6z4c7g9JI0u1QU72xtUFW22eA9DnW/exec";
+
+
+/*
+   CONTOH:
+
+   const GOOGLE_SCRIPT_URL =
+   "https://script.google.com/macros/s/AKfycbxxxxxxxxxxxx/exec";
+
+*/
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+const navbar =
+document.getElementById("navbar");
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        if (window.scrollY > 50) {
+
+            navbar.classList.add("scrolled");
+
+        } else {
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navMenu =
+document.getElementById("navMenu");
+
+menuToggle.addEventListener(
+    "click",
+    function() {
+
+        navMenu.classList.toggle(
+            "active"
+        );
+
+    }
+);
+
+
+document
+.querySelectorAll(".nav-menu a")
+.forEach(function(link) {
+
+    link.addEventListener(
+        "click",
+        function() {
+
+            navMenu.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
+
+const revealElements =
+document.querySelectorAll(
+    ".reveal"
+);
+
+
+function revealOnScroll() {
+
+    revealElements.forEach(
+        function(element) {
+
+            const position =
+                element
+                .getBoundingClientRect()
+                .top;
+
+            if (
+                position <
+                window.innerHeight - 80
+            ) {
+
+                element.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+revealOnScroll();
+
+
+/* =====================================================
+   FORMAT RUPIAH
+===================================================== */
+
+function rupiah(angka) {
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0
+        }
+    ).format(angka);
+
+}
+
+
+/* =====================================================
+   ELEMENT PESANAN
+===================================================== */
+
+const menuSelect =
+document.getElementById(
+    "menuSelect"
+);
+
+const jumlah =
+document.getElementById(
+    "jumlah"
+);
+
+const total =
+document.getElementById(
+    "total"
+);
+
+
+/* =====================================================
+   HITUNG TOTAL
+===================================================== */
+
+function hitungTotal() {
+
+    const option =
+        menuSelect.options[
+            menuSelect.selectedIndex
+        ];
+
+
+    const harga =
+        Number(
+            option.getAttribute(
+                "data-price"
+            ) || 0
+        );
+
+
+    const qty =
+        Number(
+            jumlah.value || 0
+        );
+
+
+    const hasil =
+        harga * qty;
+
+
+    total.textContent =
+        rupiah(hasil);
+
+}
+
+
+menuSelect.addEventListener(
+    "change",
+    hitungTotal
+);
+
+jumlah.addEventListener(
+    "input",
+    hitungTotal
+);
+
+
+/* =====================================================
+   PILIH MENU
+===================================================== */
+
+function pilihMenu(nama) {
+
+    for (
+        let i = 0;
+        i < menuSelect.options.length;
+        i++
+    ) {
+
+        if (
+            menuSelect.options[i].value
+            === nama
+        ) {
+
+            menuSelect.selectedIndex =
+                i;
+
+            break;
+
+        }
+
+    }
+
+
+    jumlah.value = 1;
+
+    hitungTotal();
+
+
+    document
+        .getElementById("pesan")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(pesan) {
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        pesan;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        function() {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        4000
+    );
+
+}
+
+
+/* =====================================================
+   CEK URL
+===================================================== */
+
+function cekURL() {
+
+    if (
+        GOOGLE_SCRIPT_URL.includes(
+            "PASTE_URL_ANDA"
+        )
+    ) {
+
+        showToast(
+            "URL Google Apps Script belum dimasukkan."
+        );
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+/* =====================================================
+   KIRIM PESANAN
+===================================================== */
+
+document
+.getElementById("orderForm")
+.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        if (!cekURL()) {
+
+            return;
+
+        }
+
+
+        const nama =
+            document
+            .getElementById("nama")
+            .value
+            .trim();
+
+
+        const hp =
+            document
+            .getElementById("hp")
+            .value
+            .trim();
+
+
+        const menu =
+            menuSelect.value;
+
+
+        const qty =
+            Number(
+                jumlah.value
+            );
+
+
+        const catatan =
+            document
+            .getElementById("catatan")
+            .value
+            .trim();
+
+
+        const option =
+            menuSelect.options[
+                menuSelect.selectedIndex
+            ];
+
+
+        const harga =
+            Number(
+                option.getAttribute(
+                    "data-price"
+                ) || 0
+            );
+
+
+        const totalHarga =
+            harga * qty;
+
+
+        if (
+            !nama ||
+            !hp ||
+            !menu ||
+            qty < 1
+        ) {
+
+            showToast(
+                "Mohon lengkapi data pesanan."
+            );
+
+            return;
+
+        }
+
+
+        /*
+           Membuat form sementara
+           untuk dikirim ke Apps Script
+        */
+
+        const form =
+            document.createElement(
+                "form"
+            );
+
+
+        form.method =
+            "POST";
+
+
+        form.action =
+            GOOGLE_SCRIPT_URL;
+
+
+        form.target =
+            "googleFrame";
+
+
+        form.style.display =
+            "none";
+
+
+        /*
+           TYPE
+        */
+
+        tambahInput(
+            form,
+            "type",
+            "pesanan"
+        );
+
+
+        /*
+           NAMA
+        */
+
+        tambahInput(
+            form,
+            "nama",
+            nama
+        );
+
+
+        /*
+           HP
+        */
+
+        tambahInput(
+            form,
+            "hp",
+            hp
+        );
+
+
+        /*
+           MENU
+        */
+
+        tambahInput(
+            form,
+            "menu",
+            menu
+        );
+
+
+        /*
+           JUMLAH
+        */
+
+        tambahInput(
+            form,
+            "jumlah",
+            qty
+        );
+
+
+        /*
+           CATATAN
+        */
+
+        tambahInput(
+            form,
+            "catatan",
+            catatan
+        );
+
+
+        /*
+           TOTAL
+        */
+
+        tambahInput(
+            form,
+            "total",
+            totalHarga
+        );
+
+
+        document.body.appendChild(
+            form
+        );
+
+
+        form.submit();
+
+
+        showToast(
+            "✅ Pesanan sedang dikirim..."
+        );
+
+
+        setTimeout(
+            function() {
+
+                showToast(
+                    "✅ Pesanan berhasil dikirim ke sistem."
+                );
+
+
+                document
+                    .getElementById(
+                        "orderForm"
+                    )
+                    .reset();
+
+
+                jumlah.value =
+                    1;
+
+
+                total.textContent =
+                    "Rp 0";
+
+
+                form.remove();
+
+            },
+            1500
+        );
+
+    }
+);
+
+
+/* =====================================================
+   FUNGSI TAMBAH INPUT
+===================================================== */
+
+function tambahInput(
+    form,
+    nama,
+    nilai
+) {
+
+    const input =
+        document.createElement(
+            "input"
+        );
+
+
+    input.type =
+        "hidden";
+
+
+    input.name =
+        nama;
+
+
+    input.value =
+        nilai;
+
+
+    form.appendChild(
+        input
+    );
+
+}
+
+
+/* =====================================================
+   FORM MASUKAN
+===================================================== */
+
+document
+.getElementById(
+    "feedbackForm"
+)
+.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        if (!cekURL()) {
+
+            return;
+
+        }
+
+
+        const nama =
+            document
+            .getElementById(
+                "feedbackNama"
+            )
+            .value
+            .trim();
+
+
+        const email =
+            document
+            .getElementById(
+                "feedbackEmail"
+            )
+            .value
+            .trim();
+
+
+        const rating =
+            document.querySelector(
+                'input[name="rating"]:checked'
+            );
+
+
+        const masukan =
+            document
+            .getElementById(
+                "masukanText"
+            )
+            .value
+            .trim();
+
+
+        if (
+            !nama ||
+            !rating ||
+            !masukan
+        ) {
+
+            showToast(
+                "Mohon lengkapi masukan."
+            );
+
+            return;
+
+        }
+
+
+        /*
+           FORM SEMENTARA
+        */
+
+        const form =
+            document.createElement(
+                "form"
+            );
+
+
+        form.method =
+            "POST";
+
+
+        form.action =
+            GOOGLE_SCRIPT_URL;
+
+
+        form.target =
+            "googleFrame";
+
+
+        form.style.display =
+            "none";
+
+
+        tambahInput(
+            form,
+            "type",
+            "masukan"
+        );
+
+
+        tambahInput(
+            form,
+            "nama",
+            nama
+        );
+
+
+        tambahInput(
+            form,
+            "email",
+            email
+        );
+
+
+        tambahInput(
+            form,
+            "rating",
+            rating.value
+        );
+
+
+        tambahInput(
+            form,
+            "masukan",
+            masukan
+        );
+
+
+        document.body.appendChild(
+            form
+        );
+
+
+        form.submit();
+
+
+        showToast(
+            "✅ Masukan sedang dikirim..."
+        );
+
+
+        setTimeout(
+            function() {
+
+                showToast(
+                    "✅ Terima kasih! Masukan berhasil dikirim."
+                );
+
+
+                document
+                    .getElementById(
+                        "feedbackForm"
+                    )
+                    .reset();
+
+
+                form.remove();
+
+            },
+            1500
+        );
+
+    }
+);
+
+
+/* =====================================================
+   TOTAL AWAL
+===================================================== */
+
+hitungTotal();
+
+</script>
+
+</body>
+
+</html>
